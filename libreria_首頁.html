@@ -19,49 +19,6 @@
         }
 
 
-
-        .nav {
-            position: relative;
-            position: sticky;
-            background: #2b2e33;
-        }
-
-        .navbar-collapse {
-            padding: 20px 0px;
-        }
-
-        .navbar-brand {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-100px)
-        }
-
-        .navbar-brand img {
-            width: 200px;
-        }
-
-
-        #navbarToggler .nav-item {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .nav-item i {
-            color: #7e8186;
-        }
-
-        .nav-item:hover {}
-
-        #nav-iconlist,
-        #nav {
-            background-color: #2b2e33;
-        }
-
-        #search_from {
-            background-color: #272a2e;
-        }
-
         .exhibit {
             box-sizing: border-box;
         }
@@ -70,8 +27,13 @@
             width: 100%;
         }
 
-        .bestseller-block {
-            width: 1440px;
+        .seller-block {
+            width: 320px;
+            margin-top: 5%;
+        }
+
+        .banner {
+            width: 414px;
         }
 
         .banner-background {
@@ -80,95 +42,86 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
-            width: 100vw;
-            height: 40vw;
+            margin: auto;
+            width: 100%;
+            height: 150vw;
             position: relative;
         }
 
         .banner-background p {
-            font-size: 20px;
+            font-size: 14px;
             text-align: center;
             position: absolute;
             bottom: 10%;
             right: 40%;
             left: 40%;
-            color: wheat;
-            border: wheat 1px solid;
+            color: #f0e1b8;
+            border: #f0e1b8 1px solid;
         }
-        .Seller{
-            margin: 5% auto 5% auto;
+
+        @media (min-width: 430px) {
+
+            .banner {
+                width: 430px;
+            }
+
+            .banner-background {
+                width: 100vw;
+                height: 120vw;
+            }
+
+            .banner-background p {
+                font-size: 22px;
+            }
+
+            .seller-block {
+                width: 640px;
+            }
+        }
+
+        @media (min-width: 769px) {
+
+            .banner {
+                width: 960px;
+            }
+
+            .banner-background {
+                width: 100vw;
+                height: 70vw;
+            }
+
+            .seller-block {
+                width: 960px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+
+            .banner {
+                width: 1280px;
+            }
+
+            .banner-background {
+                width: 100vw;
+                height: 50vw;
+            }
+
+            .seller-block {
+                width: 1440px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="search_form collapse" id="search_from">
-        <form class="form-inline">
-            <div class="input-group w-100">
-                <input type="search" placeholder="輸入您想搜尋的" class="form-control">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">搜尋書籍</a>
-                        <a class="dropdown-item" href="#">搜尋展覽</a>
-                        <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark" id="nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" id="nav-button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#" id="brand"><img src="../img/sh_logo_update_large_2017_white.png" alt=""></a>
 
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 mx-4">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">線上購買書籍</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">展演</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">場地租借</a>
-            </ul>
-        </div>
-        <nav class="my-2 my-lg-0 mx-4m" id="nav-iconbox">
-            <ul class="navbar nav-justified  mt-2" id="nav-iconlist">
-                <li class="nav-item d-none d-sm-block" id="1">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-user-alt"></i>
-                    </a>
-                </li>
-                <li class="nav-item d-none d-sm-block">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="button" data-toggle="collapse"
-                        data-target="#search_from">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </nav>
     <div class="banner">
         <div class="banner-background">
             <p>There is no friend so faithful as a good book.</p>
         </div>
     </div>
     <div class="bestSeller Seller">
-        <div class="container bestseller-block">
+        <div class="container bestseller-block seller-block">
             <div class="bestseller-title">
                 <h3>暢銷書籍</h3>
             </div>
@@ -237,7 +190,7 @@
         </div>
     </div>
     <div class="newSeller Seller">
-        <div class="container newseller-block">
+        <div class="container newseller-block seller-block">
             <div class="newseller-title">
                 <h3>最新上市</h3>
             </div>

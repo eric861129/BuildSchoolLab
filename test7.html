@@ -60,17 +60,17 @@
         }
 
         .fp-controlArrow.fp-prev {
-            top: 98%;
+            top: 55%;
             left: 10px;
             border-color: transparent #8995adaa transparent transparent;
-            border-width: 16px 34px 16px 0;
+            border-width: 16px 20px 16px 0;
         }
 
         .fp-controlArrow.fp-next {
-            top: 98%;
+            top: 55%;
             right: 10px;
             border-color: transparent transparent transparent #8995adaa;
-            border-width: 16px 0 16px 34px;
+            border-width: 16px 0 16px 20px;
         }
 
         .bestseller {
@@ -143,13 +143,61 @@
                     </div>
                 </div>
             </div>
-            <div class="slide" data-anchor="slide1"></div>
-            <div class="slide" data-anchor="slide1"></div>
+            <div class="slide" data-anchor="slide1">
+                <div class="container m-auto bestseller">
+                    <div class="bestseller-title col-sm-12">
+                        最新上市
+                    </div>
+                    <div class="bestseller-block slider col-sm-12">
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=2" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=2" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=2" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=2" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=2" class="w-100">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-anchor="slide1">
+                <div class="container m-auto bestseller">
+                    <div class="bestseller-title col-sm-12">
+                        每日特價
+                    </div>
+                    <div class="bestseller-block slider col-sm-12">
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=31" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=3" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=3" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=3" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=3" class="w-100">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
 
         </div>
         <div class="section">
-            <div class="slide" data-anchor="slide1">
+            <div class="slide " data-anchor="slide1">
                 <div class="exhibition row">
                     <div class="exhibition-pic col-sm-12 col-lg-6">
                         <img src="https://picsum.photos/300/300/?random=5">
@@ -222,6 +270,8 @@
     <script>
         new fullpage('#fullpage', {
             sectionsColor: [' #f0e1b8', ' #f0e1b8', ' #f0e1b8', ' #f0e1b8'],
+            paddingTop:"60px",
+            tochuSensitivity:100,
         });
     </script>
     <script>
@@ -260,7 +310,7 @@
                 {
                     breakpoint: 480,
                     settings: {
-                        arrows: true,
+                        arrows: false,
                         centerMode: true,
                         centerPadding: '0px',
                         slidesToShow: 1,

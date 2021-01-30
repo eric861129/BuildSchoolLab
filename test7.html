@@ -32,9 +32,6 @@
             box-sizing: border-box;
         }
 
-        body img {
-            width: 100%;
-        }
 
         .banner {
             background-image: url(/picture/slow.gif);
@@ -58,149 +55,56 @@
             text-align: center;
         }
 
-        .commodity-block {
-            margin: auto;
+        .bestseller-title {
+            font-size: 50px;
         }
 
-        .best-new {
-            margin: auto;
+        .fp-controlArrow.fp-prev {
+            top: 98%;
+            left: 10px;
+            border-color: transparent #8995adaa transparent transparent;
+            border-width: 16px 34px 16px 0;
         }
 
-        .Seller-title {
-            width: 16.6666666667%;
-            font-size: 40px;
+        .fp-controlArrow.fp-next {
+            top: 98%;
+            right: 10px;
+            border-color: transparent transparent transparent #8995adaa;
+            border-width: 16px 0 16px 34px;
         }
 
-        .Seller {
-            width: 83.3333333333%;
-        }
-
-        .specialSeller {
-            display: none;
-        }
-
-        .bestSeller-block {
-            box-sizing: border-box;
-            border: 5px #f0e1b8 solid;
+        .bestseller {
             background-color: #e1c7a6;
-            padding-top: 20px;
             margin: auto;
-        }
-
-        .newSeller-block {
             box-sizing: border-box;
-            border: 5px #f0e1b8 solid;
-            background-color: #e1c7a6;
-            padding-top: 20px;
-
+            border: #e1c7a6 10px solid;
+        }
+        .slick-dots{
             margin: auto;
+            width: 90%;     
+        }
+        .slick-next {
+            right: 20px;
+        }
+        .slick-prev{
+            left: 20px;
         }
 
-        .exhibition {
-            width: 80%;
-            margin: auto;
+        .slick-next,
+        .slick-prev {
+            top: 106%;
         }
 
-        .exhibition-title {
-            font-size: 30px;
-        }
-
-        @media (min-width: 430px) {
-            .Seller-title {
-                font-size: 50px;
-            }
-
-            .specialSeller {
-                display: block;
-                display: flex;
-                box-sizing: border-box;
-                border: 10px #f0e1b8 solid;
-                border-right: 18px #f0e1b8 solid;
-                border-left: 18px #f0e1b8 solid;
-
-                border-bottom: 10px #f0e1b8 solid;
-                background-color: #e1c7a6;
-                margin: auto;
-                font-size: 50px;
-                padding-top: 20px;
-            }
-
-            .exhibition-text .exhibition-title {
-                font-size: 50px;
-            }
-            .exhibition-text p{
-                font-size: 20px;
-            }
-        }
+        @media (min-width: 430px) {}
 
         @media (min-width: 769px) {
             .banner-text {
                 font-size: 36px;
             }
 
-            .specialSeller {
-                padding-top: 64px;
-                padding-bottom: 64px;
-            }
-
-            .specialSeller-title {
-                height: 246px;
-                font-size: 60px;
-                writing-mode: vertical-lr;
-                position: relative;
-            }
-
-            .text-left-top {
-                position: absolute;
-                top: 1%;
-                left: 1%;
-            }
-
-            .text-left-bot {
-                position: absolute;
-                bottom: 5%;
-                left: 1%;
-            }
-
-            .text-right-top {
-                position: absolute;
-                top: 1%;
-                right: 1%;
-            }
-
-            .text-right-bot {
-                position: absolute;
-                bottom: 5%;
-                right: 1%;
-            }
         }
 
-        @media (min-width: 1025px) {
-
-            .text-left-top,
-            .text-left-bot,
-            .text-right-top,
-            .text-right-bot {
-                position: unset;
-            }
-
-            .specialSeller,
-            .best-new {
-                height: 60vh;
-            }
-
-            .specialSeller-title {
-                height: 100%;
-            }
-
-            .specialSeller-item {
-                width: 300px;
-            }
-
-            .specialSeller-pic {
-                display: flex;
-            }
-        }
+        @media (min-width: 1025px) {}
     </style>
 </head>
 
@@ -214,73 +118,35 @@
 
         </div>
         <div class="section commodity">
-            <div class="commodity-block row">
-                <div class="best-new col-sm-12 row col-md-12 col-lg-8">
-                    <div class="bestSeller-block col-sm-12 row  ">
+            <div class="slide" data-anchor="slide1">
+                <div class="container m-auto bestseller">
+                    <div class="bestseller-title col-sm-12">
+                        暢銷書籍
+                    </div>
+                    <div class="bestseller-block slider col-sm-12">
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=1" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=1" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=1" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=1" class="w-100">
+                        </div>
+                        <div class="bestseller-block-item">
+                            <img src="https://picsum.photos/200/200/?random=1" class="w-100">
+                        </div>
 
-                        <div class="bestSeller-title  Seller-title col-sm-2">
-                            暢銷書籍
-                        </div>
-                        <div class="bestSeller Seller slider col-sm-10">
-                            <div class="bestSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=1">
-                            </div>
-                            <div class="bestSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=1">
-                            </div>
-                            <div class="bestSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=1">
-                            </div>
-                            <div class="bestSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=1">
-                            </div>
-                            <div class="bestSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=1">
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="newSeller-block col-sm-12 row">
-                        <div class="newSeller-title Seller-title col-sm-2">
-                            新書上市
-                        </div>
-                        <div class="newSeller Seller slider col-sm-10">
-                            <div class="newSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=2">
-                            </div>
-                            <div class="newSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=2">
-                            </div>
-                            <div class="newSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=2">
-                            </div>
-                            <div class="newSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=2">
-                            </div>
-                            <div class="newSeller-item Seller-item exhibit">
-                                <img src="https://picsum.photos/200/200/?random=2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="specialSeller col-sm-12 col-md-12 row col-lg-4 ">
-                    <div class="specialSeller-title col-sm-2 col-md-2 col-lg-12 col-xl-3">
-                        <span class="text-left-top">每</span><span class="text-left-bot">日</span> <span
-                            class="text-right-top">特</span> <span class="text-right-bot">價</span>
-                    </div>
-                    <div class="specialSeller-pic Special-Seller slider row col-sm-6 col-md-10 col-lg-12 col-xl-9">
-                        <div class="specialSeller-item Seller-item ">
-                            <img src="https://picsum.photos/200/200/?random=3">
-                        </div>
-                        <div class="specialSeller-item Seller-item ">
-                            <img src="https://picsum.photos/200/200/?random=3">
-                        </div>
-                        <div class="specialSeller-item Seller-item ">
-                            <img src="https://picsum.photos/200/200/?random=3">
-                        </div>
                     </div>
                 </div>
             </div>
+            <div class="slide" data-anchor="slide1"></div>
+            <div class="slide" data-anchor="slide1"></div>
+
+
         </div>
         <div class="section">
             <div class="slide" data-anchor="slide1">
@@ -359,52 +225,7 @@
         });
     </script>
     <script>
-        $(".Special-Seller").slick({
-            centerMode: true,
-            centerPadding: '0px',
-            slidesToShow: 1,
-            speed: 1000,
-            autoplay: true,
-            arrows: false,
-            // unslick,
 
-            responsive: [
-                {
-                    breakpoint: 1100,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '0px',
-                        slidesToShow: 1,
-                        speed: 1000,
-                        autoplay: true,
-                    }
-                },
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '0px',
-                        slidesToShow: 2,
-                        speed: 1000,
-                        autoplay: true,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '0px',
-                        slidesToShow: 1,
-                        speed: 1000,
-                        autoplay: true,
-                        dots: true
-                    }
-                }
-            ]
-        });
         $(".slider").slick({
             centerMode: true,
             centerPadding: '0px',
@@ -439,7 +260,7 @@
                 {
                     breakpoint: 480,
                     settings: {
-                        arrows: false,
+                        arrows: true,
                         centerMode: true,
                         centerPadding: '0px',
                         slidesToShow: 1,

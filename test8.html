@@ -22,8 +22,104 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
         integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <title>libreria</title>
     <style>
+        body {
+            background-color: #f0e1b8;
+        }
+
+        .head {
+
+            position: fixed;
+            display: block;
+            width: 100%;
+            background: #333;
+            z-index: 9;
+            text-align: center;
+            color: #f2f2f2;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+
+        /* Logo */
+        #brand {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translateX(-100px);
+        }
+
+        #brand img {
+            width: 200px;
+        }
+
+        /* Logo瞍Ｗ嵗��㯄�讠�� */
+        .navbar-brand-hamburger img {
+            width: 100px;
+        }
+
+        #literial_brand img {
+            max-width: 250px;
+            padding: 30px 0px;
+        }
+
+        /* navbar銝餉�𤥁死�𠧧敶� */
+        #nav-iconlist,
+        #nav {
+            background-color: #2a2c27;
+        }
+
+        #search_from {
+            background-color: #2a2c27;
+        }
+
+        .nav-item i {
+            color: #7e8186;
+        }
+
+        .nav {
+            position: relative;
+            position: sticky;
+        }
+
+        /* navbar�折�冽�垍��矽�㟲 */
+        #navbarToggler .nav-item {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* �𤣰���＊蝷箇隁甇� */
+        .collapse.show+#brand,
+        .collapsing+#brand,
+        .collapse.show+#search-button,
+        .collapsing+#search-button,
+        .collapsing~#nav-iconbox,
+        .collapse.show~#nav-iconbox {
+            display: none;
+        }
+
+        /* �𤣰����閧𧞄靽格迤����𧢲踎憿舐內靽格迤 */
+        .collapsing {
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            display: -moz-popup;
+
+        }
+
+        .navbar-collapse.collapse.show {
+            height: 100vh;
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            display: -moz-popup;
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
             font-family: 'Montserrat', sans-serif;
@@ -123,7 +219,8 @@
             box-sizing: border-box;
             width: 80%;
         }
-        .instgram-pic img{
+
+        .instgram-pic img {
             width: 100%;
             height: 80vh;
         }
@@ -210,17 +307,20 @@
                 border-color: transparent transparent transparent #8995adaa;
                 border-width: 32px 0 32px 40px;
             }
-            .slick-dots{
+
+            .slick-dots {
                 width: 98%;
             }
-            .exhibition-pic img{
+
+            .exhibition-pic img {
                 width: 70%;
                 margin-right: -15%;
             }
-            .exhibition-text{
+
+            .exhibition-text {
                 padding: 8% 5% 5% 0%;
             }
-            
+
 
             .exhibition-text p {
                 font-size: 30px;
@@ -235,8 +335,98 @@
 </head>
 
 <body>
+    <div class="head">
+        <div class="search_form collapse" id="search_from">
+            <form class="form-inline">
+                <div class="input-group w-100">
+                    <input type="search" placeholder="輸入您想搜尋的" class="form-control">
+                    <class class="input-group-append">
+                        <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">搜尋書籍</a>
+                            <a class="dropdown-item" href="#">搜尋展覽</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </class>
+                </div>
+            </form>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark" id="nav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" id="nav-button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" min-width:100px" id="navbarToggler">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item" id="literial_brand">
+                        <a href="#" class="nav-link  d-lg-none">
+                            <img src="/picture/smlogo_v2.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">線上購買書籍<span class="sr-only">線上購買書籍(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">展演</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">場地租借</a>
+                    </li>
+                    <li>
+                        <nav class="nav-iconbox  d-lg-none" id="nav-iconbox">
+                            <ul class="navbar justify-content-center" id="nav-iconlist">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-user-alt "></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="search-button">
+                                    <button class="btn btn-outline-warning my-2 my-sm-0" type="button"
+                                        data-toggle="collapse" data-target="#search_from">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-brand" href="#" id="brand"><img id="navbar-absolute" src="/picture/工作區域 2 複本 3.png" alt=""></a>
+            <nav class="my-2 my-lg-0" id="nav-iconbox">
+                <ul class="navbar nav-justified nav mt-2 mr-lg-5" id="nav-iconlist">
+                    <li class="nav-item" id="1">
+                        <a href="#" class="nav-link d-none d-sm-block">
+                            <i class="fas fa-user-alt "></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-none d-sm-block">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="search-button">
+                        <button class="btn btn-outline-warning my-2 my-sm-0" type="button" data-toggle="collapse"
+                            data-target="#search_from">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+    </div>
     <div id="fullpage">
         <div class="section banner">
+
 
             <div class="banner-text">
                 <p>There is no friend so faithful as a good book.</p>
@@ -244,6 +434,8 @@
 
         </div>
         <div class="section commodity">
+
+
             <div class="slide" data-anchor="slide1">
                 <div class="container m-auto bestseller seller">
                     <div class="bestseller-title seller-title col-sm-12">
@@ -323,6 +515,8 @@
 
         </div>
         <div class="section">
+
+
             <div class="slide " data-anchor="slide1">
                 <div class="exhibition row">
                     <div class="exhibition-pic col-sm-12 col-lg-6">
@@ -364,13 +558,7 @@
             </div>
 
         </div>
-        <div class="section">
-            <div class="instgram">
-                <div class="instgram-pic">
-                    <img src="/picture/Libreria-SCA-8287_Iwan-Baan_Web.jpg" alt="">
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 
@@ -455,6 +643,17 @@
             ]
         });
         // $('.exhibition-block').slick();
+    </script>
+    <script>
+
+        let mediaQueryList = window.matchMedia("(min-width:992px)");
+        function screenTest(x) {
+            if (x.matches) {
+                document.getElementById("navbarToggler").classList.remove("show");
+            }
+        }
+        mediaQueryList.addListener(screenTest);
+
     </script>
 </body>
 

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css"
+        integrity="sha512-8M8By+q+SldLyFJbybaHoAPD6g07xyOcscIOQEypDzBS+sTde5d6mlK2ANIZPnSyxZUqJfCNuaIvjBUi8/RS0w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <title>libreria</title>
+
+    <style>
+        .head {
+
+            position: fixed;
+            display: block;
+            width: 100%;
+            background: #333;
+            z-index: 9;
+            text-align: center;
+            color: #f2f2f2;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+
+        /* Logo */
+        #brand {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-100px);
+        }
+
+        #brand img {
+            width: 200px;
+        }
+
+        /* Logo瞍Ｗ嵗��㯄�讠�� */
+        .navbar-brand-hamburger img {
+            width: 100px;
+        }
+
+        #literial_brand img {
+            max-width: 250px;
+            padding: 30px 0px;
+        }
+
+        /* navbar銝餉�𤥁死�𠧧敶� */
+        #nav-iconlist,
+        #nav {
+            background-color: #2a2c27;
+        }
+
+        #search_from {
+            background-color: #2a2c27;
+        }
+
+        .nav-item i {
+            color: #7e8186;
+        }
+
+        .nav {
+            position: relative;
+            position: sticky;
+        }
+
+        /* navbar�折�冽�垍��矽�㟲 */
+        #navbarToggler .nav-item {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* �𤣰���＊蝷箇隁甇� */
+        .collapse.show+#brand,
+        .collapsing+#brand,
+        .collapse.show+#search-button,
+        .collapsing+#search-button,
+        .collapsing~#nav-iconbox,
+        .collapse.show~#nav-iconbox {
+            display: none;
+        }
+
+        /* �𤣰����閧𧞄靽格迤����𧢲踎憿舐內靽格迤 */
+        .collapsing {
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            display: -moz-popup;
+
+        }
+
+        .navbar-collapse.collapse.show {
+            height: 100vh;
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            display: -moz-popup;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0e1b8;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .banner {
+            background-image: url(/picture/Libreria-SCA-8694_Web.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .banner-text {
+            font-size: 20px;
+            color: #f0e1b8;
+            border: #f0e1b8 2px solid;
+            position: absolute;
+            top: 70%;
+            left: 35%;
+            right: 35%;
+        }
+
+        .section {
+            text-align: center;
+        }
+
+        .fp-controlArrow {
+            top: 90%;
+        }
+
+        .fp-controlArrow.fp-prev {
+            border-width: 26px 24px 26px 0;
+            left: 15%;
+        }
+
+        .fp-controlArrow.fp-next {
+            border-width: 26px 0 26px 24px;
+            right: 15%;
+        }
+
+        .fp-slidesNav {
+            top: 45%;
+            left: 93% !important;
+
+        }
+
+        .fp-slidesNav .fp-bottom ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slick-dots {}
+
+        .sellertitle {
+            margin-top: 60px;
+        }
+
+        .sellertitle h4 {
+            font-weight: bold;
+            font-size: 36px;
+            letter-spacing: 5px;
+        }
+
+        .seller-pic {
+            padding: 10%;
+            box-sizing: border-box;
+        }
+
+        .exhibition-pic {
+            padding: 10% 10% 6% 10%;
+            box-sizing: border-box;
+        }
+
+        .exhibition-title {
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        .exhibition-text p {
+            font-size: 16px;
+            margin-top: 6%;
+        }
+
+        .exhibition .fp-controlArrow {
+            top: 77%;
+        }
+
+        .exhibition .fp-controlArrow.fp-prev {
+            border-width: 26px 24px 26px 0;
+            left: 15%;
+        }
+
+        .exhibition .fp-controlArrow.fp-next {
+            border-width: 26px 0 26px 24px;
+            right: 15%;
+        }
+
+        .exhibition-item .fp-tableCell {
+            display: flex;
+        }
+    </style>
+    <style>
+        @media (min-width: 430px) {
+            .banner-text {
+                font-size: 26px;
+            }
+
+            .sellertitle h4 {
+                font-size: 48px;
+            }
+
+            .fp-controlArrow {
+                top: 85%;
+            }
+
+            .fp-controlArrow.fp-prev {
+                border-width: 40px 30px 40px 0;
+                left: 26%;
+            }
+
+            .fp-controlArrow.fp-next {
+                border-width: 40px 0 40px 30px;
+                right: 26%;
+            }
+
+            .fp-slidesNav {
+                top: 45%;
+                left: 95% !important;
+
+            }
+
+            .exhibition-pic {
+                padding: 10% 10% 2% 10%;
+                box-sizing: border-box;
+            }
+
+            .exhibition-title {
+                font-size: 48px;
+            }
+
+            .exhibition-text p {
+                font-size: 24px;
+                margin-top: 2%;
+            }
+
+            .exhibition .fp-controlArrow {
+                top: 86%;
+            }
+
+            .exhibition .fp-controlArrow.fp-prev {
+                border-width: 26px 24px 26px 0;
+                left: 30%;
+            }
+
+            .exhibition .fp-controlArrow.fp-next {
+                border-width: 26px 0 26px 24px;
+                right: 30%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .banner-text {
+                font-size: 26px;
+            }
+            .exhibition-pic {
+                padding: 9% 2% 2% 7%;
+            }
+            .exhibition-text{
+                padding: 9% 7% 2% 2%;
+            }
+            .exhibition-text p{
+                padding-top: 15%;
+                
+            }
+            .exhibition-title {
+                font-size: 60px;
+                padding: 5%;
+            }
+            .exhibition .fp-controlArrow {
+                top: 88%;
+            }
+
+            .exhibition .fp-controlArrow.fp-prev {
+                border-width: 40px 30px 40px 0;
+                left: 30%;
+            }
+
+            .exhibition .fp-controlArrow.fp-next {
+                border-width: 40px 0 40px 30px;
+                right: 30%;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .sellertitle h4 {
+                font-size: 48px;
+            }
+
+            .fp-controlArrow {
+                top: 80%;
+            }
+
+            .fp-controlArrow.fp-prev {
+                border-width: 40px 30px 40px 0;
+                left: 20%;
+            }
+
+            .fp-controlArrow.fp-next {
+                border-width: 40px 0 40px 30px;
+                right: 20%;
+            }
+
+            .fp-slidesNav {
+                top: 45%;
+                left: 98% !important;
+
+            }
+            .sellertitle{
+                margin-top: 4%;
+            }
+            .slick-prev,
+            .slick-next {
+                top: 103%;
+                z-index: 5;
+                width: 40px;
+                height: 40px;
+                font-size: 40px;
+            }
+
+            .slick-prev {
+                left: 40%;
+            }
+
+            .slick-prev::before {
+                font-size: 40px;
+            }
+
+            .slick-next {
+                right: 40%;
+            }
+
+            .slick-next::before {
+                font-size: 40px;
+            }
+            .exhibition .fp-controlArrow {
+                top: 94%;
+            }
+            .exhibition-pic {
+                padding: 9% 5% 2% 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="search_form collapse" id="search_from">
+            <form class="form-inline">
+                <div class="input-group w-100 m-auto">
+                    <input type="search" placeholder="輸入您想搜尋的" class="form-control">
+                    <class class="input-group-append">
+                        <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">搜尋書籍</a>
+                            <a class="dropdown-item" href="#">搜尋展覽</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </class>
+                </div>
+            </form>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark" id="nav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" id="nav-button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" min-width:100px" id="navbarToggler">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item" id="literial_brand">
+                        <a href="#" class="nav-link  d-lg-none">
+                            <img src="/picture/smlogo_v2.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">線上購買書籍<span class="sr-only">線上購買書籍(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">展演</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">場地租借</a>
+                    </li>
+                    <li>
+                        <nav class="nav-iconbox  d-lg-none" id="nav-iconbox">
+                            <ul class="navbar justify-content-center" id="nav-iconlist">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-user-alt "></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="search-button">
+                                    <button class="btn btn-outline-warning my-2 my-sm-0" type="button"
+                                        data-toggle="collapse" data-target="#search_from">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-brand" href="#" id="brand"><img id="navbar-absolute" src="/picture/工作區域 2 複本 3.png"
+                    alt=""></a>
+            <nav class="my-2 my-lg-0" id="nav-iconbox">
+                <ul class="navbar nav-justified nav mt-2 mr-lg-5" id="nav-iconlist">
+                    <li class="nav-item" id="1">
+                        <a href="#" class="nav-link d-none d-sm-block">
+                            <i class="fas fa-user-alt "></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-none d-sm-block">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="search-button">
+                        <button class="btn btn-outline-warning my-2 my-sm-0" type="button" data-toggle="collapse"
+                            data-target="#search_from">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+    </div>
+    <div id="fullpage">
+        <div class="section banner">
+            <div class="banner-text">
+                <p>There is no friend so faithful as a good book.</p>
+            </div>
+        </div>
+        <div class="section sell">
+            <div class="slide" data-anchor="slide1">
+                <div class="seller best-seller">
+
+                    <div class="seller-block slider best-seller-block">
+                        <div class="seller-item best-seller-item">
+                            <div class="seller-pic best-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item best-seller-item">
+                            <div class="seller-pic best-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item best-seller-item">
+                            <div class="seller-pic best-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item best-seller-item">
+                            <div class="seller-pic best-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item best-seller-item">
+                            <div class="seller-pic best-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sellertitle best-seller-title">
+                        <h4>暢銷書籍</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-anchor="slide2">
+                <div class="seller new-seller">
+
+                    <div class="seller-block slider new-seller-block">
+                        <div class="seller-item new-seller-item">
+                            <div class="seller-pic new-seller ner-seller-pic-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item new-seller-item">
+                            <div class="seller-pic ner-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item new-seller-item">
+                            <div class="seller-pic ner-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item new-seller-item">
+                            <div class="seller-pic ner-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item new-seller-item">
+                            <div class="seller-pic ner-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sellertitle new-seller-title">
+                        <h4>最新上市</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-anchor="slide3">
+                <div class="seller special-seller">
+
+                    <div class="seller-block slider special-seller-blcok">
+                        <div class="seller-item special-seller-item">
+                            <div class="seller-pic special-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item special-seller-item">
+                            <div class="seller-pic special-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item special-seller-item">
+                            <div class="seller-pic special-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item special-seller-item">
+                            <div class="seller-pic special-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                        <div class="seller-item special-seller-item">
+                            <div class="seller-pic special-seller-pic">
+                                <img src="https://picsum.photos/200/200/?random=1" class="w-100 m-auto">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sellertitle special-seller-title">
+                        <h4>每日特價</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="section exhibition">
+            <div class="slide exhibition-item" data-anchor="slide1">
+                <div class="exhibition-pic col-sm-12 col-lg-6">
+                    <img src="https://picsum.photos/200/200/?random=5" class="w-100">
+                </div>
+                <div class="exhibition-text col-sm-12 col-lg-6">
+                    <div class="exhibition-title">
+                        XXXX展
+                    </div>
+                    <p>
+                        承認外掛型號制定一口氣當天英國出去說明百姓搜尋仔細第一個事件，居住我的承擔解放明白帶來液晶，漸漸允。
+                    </p>
+                </div>
+            </div>
+            <div class="slide exhibition-item" data-anchor="slide2">
+                <div class="exhibition-pic col-sm-12 col-lg-6">
+                    <img src="https://picsum.photos/200/200/?random=5" class="w-100">
+                </div>
+                <div class="exhibition-text col-sm-12 col-lg-6">
+                    <div class="exhibition-title">
+                        XXXX展
+                    </div>
+                    <p>
+                        承認外掛型號制定一口氣當天英國出去說明百姓搜尋仔細第一個事件，居住我的承擔解放明白帶來液晶，漸漸允。
+                    </p>
+                </div>
+
+            </div>
+            <div class="slide exhibition-item" data-anchor="slide3">
+                <div class="exhibition-pic col-sm-12 col-lg-6">
+                    <img src="https://picsum.photos/200/200/?random=5" class="w-100">
+                </div>
+                <div class="exhibition-text col-sm-12 col-lg-6">
+                    <div class="exhibition-title">
+                        XXXX展
+                    </div>
+                    <p>
+                        承認外掛型號制定一口氣當天英國出去說明百姓搜尋仔細第一個事件，居住我的承擔解放明白帶來液晶，漸漸允。
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+        integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"
+        integrity="sha512-Gx/C4x1qubng2MWpJIxTPuWch9O88dhFFfpIl3WlqH0jPHtCiNdYsmJBFX0q5gIzFHmwkPzzYTlZC/Q7zgbwCw=="
+        crossorigin="anonymous"></script>
+    <script>
+        new fullpage('#fullpage', {
+            sectionsColor: [' #f0e1b8', ' #f0e1b8', ' #f0e1b8', ' #f0e1b8'],
+            paddingTop: "90px",
+            tochuSensitivity: 100,
+            slidesNavigation: true,
+            verticalCentered: true,
+            slidesNavigation: true,
+            controlArrowColor: "#aaa",
+        });
+    </script>
+    <script>
+        //slick slider 效果設定
+        $(".slider").slick({
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 3,
+            speed: 1000,
+            autoplay: true,
+            arrows: false,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 1100,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '100px',
+                        slidesToShow: 2,
+                        speed: 1000,
+                        autoplay: true,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '100px',
+                        slidesToShow: 1,
+                        speed: 1000,
+                        autoplay: true,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 1,
+                        speed: 1000,
+                        autoplay: true,
+                        dots: true
+                    }
+                }
+            ]
+        });
+        // $('.exhibition-block').slick();
+    </script>
+    <script>
+
+        let mediaQueryList = window.matchMedia("(min-width:992px)");
+        function screenTest(x) {
+            if (x.matches) {
+                document.getElementById("navbarToggler").classList.remove("show");
+            }
+        }
+        mediaQueryList.addListener(screenTest);
+
+    </script>
+</body>
+
+</html>

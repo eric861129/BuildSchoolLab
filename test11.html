@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabbox {
+            margin: 0 auto;
+            min-width: 320px;
+            max-width: 1000px;
+            text-align: center;
+            padding: 60px 0 60px;
+        }
+
+
+        .content>div {
+            display: none;
+            padding: 20px 25px 5px;
+        }
+
+        input {
+            display: none;
+        }
+
+        .tp {
+            display: inline-block;
+            padding: 5px 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .tp:hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        input:checked+.tp {
+            background: #ffa500;
+            color: #fff;
+        }
+
+        #tab1:checked~.content #content1,
+        #tab2:checked~.content #content2,
+        #tab3:checked~.content #content3,
+        #tab4:checked~.content #content4,
+        #tab5:checked~.content #content5 {
+            display: block;
+            text-align: left;
+        }
+
+        #content1,
+        #content2,
+        #content3 {
+            margin: 0 0 20px;
+
+            height: 150px;
+            border: 1px solid #ffa500;
+            border-radius: 3px;
+        }
+
+        p {
+            line-height: 25px;
+            text-align: justify;
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tabbox">
+        <input checked id="tab1" name="tabs" type="radio" />
+        <label class="tp" for="tab1">Amazon E2</label>
+
+        <input id="tab2" name="tabs" type="radio" />
+        <label class="tp" for="tab2">Amazon S3</label>
+
+        <input id="tab3" name="tabs" type="radio" />
+        <label class="tp" for="tab3">Amazon CloudFront CDN</label>
+        <br />
+        <div class="content" style="background-color: white;">
+            <div id="content1">
+                <p>
+                    亞馬遜彈性雲端運算英（Amazon Elastic Compute Cloud，Amazon EC2）是可以依照您的需求透過 Web
+                    服務介面在幾分鐘之內開啟或是關閉運算服務達到高可擴展性。您也可以按照你的運算用途來選擇不同規格的 EC2 執行個體種類 (Instance
+                    type)，每種執行個體的種類都包含一或是多種規格大小以滿足不同的需求。EC2 可依照您的使用需求按需付費 (Pay-as-you-go)，或者，您也可以購買預留執行個體
+                    (Reserved Instance)，透過預付的方式，來達到成本優化的目的。
+                </p>
+            </div>
+            <div id="content2">
+                <p>
+                    Amazon S3 (Amazon Simple Storage Service)，為 AWS 雲端平台的物件式儲存服務。它提供了99.999999999% 的耐久度
+                    (Durability)，若您想要進一步提升資料耐久度或使想要將檔案放置到靠近您客戶的區域 (Region) 以降低延遲可以更進一步開起跨區域複寫 (Cross Region
+                    Replication, CRR) 設定，使不同 AWS 區域間的儲存貯體 (Bucket) 自動同步複製物件，跨區域複寫的儲存貯體可由相同 AWS 帳戶或不同帳戶所共同擁有。
+                    您可以依照資料的存取頻率在 Amazon S3 上選擇相對應的儲存類別或者你也可以設定檔案生命週期使原本儲存在 S3 標準的檔案移轉至 S3 智慧型分層、S3 標準 – IA 和 S3
+                    單區域 – IA 與 S3 Glacier。
+                </p>
+            </div>
+            <div id="content3">
+                <p>
+                    CDN 全名為 Content Delivery Network，又名內容傳遞網路，它是一種在網路上傳輸的內容快取機制，透過不同全球不同節點佈有 CDN
+                    服務，能夠有效降低內容傳輸的延遲，確保網站在世界各地讀取維持同等的速度。AWS 裡面的 CDN 服務就是 Amazon CloudFront ，Amazon CloudFront
+                    提供開發者及企業一個簡單的方式，透過全球節點網路，向最終使用者發佈內容，實現低延遲的高速資料傳輸。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

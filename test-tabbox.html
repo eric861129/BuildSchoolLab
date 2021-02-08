@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <title>libreria</title>
+
+    <style>
+        ul {
+            list-style: none;
+        }
+
+
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .First-sight {
+            background-image: url(/picture/Mainpage\ \(1\).jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            width: 100%;
+            height: 85vh;
+            z-index: -3;
+        }
+
+        .First-sight-text p {
+            font-size: 16px;
+            color: #fbd284;
+            border: #fbd284 2px solid;
+            position: absolute;
+            top: 70%;
+            left: 35%;
+            right: 35%;
+            text-align: center;
+        }
+
+        .seller-item {
+            margin: auto;
+            overflow: visible;
+        }
+
+        .seller-pic {
+            width: 230px;
+            height: 250px;
+            position: absolute;
+            top: -50px;
+            left: -30px;
+            z-index: 5;
+
+        }
+
+
+        .seller-pic img {
+            width: 100%;
+            z-index: 5;
+
+        }
+
+        .seller-text {
+            position: relative;
+            background-color: #f1f1ee;
+            width: 230px;
+            height: 270px;
+            margin: auto;
+            margin-top: 40px;
+            margin-left: 60px;
+
+        }
+
+        .seller-text p {
+            position: absolute;
+            bottom: -10px;
+            padding-left: 20px;
+            font-size: 20px;
+        }
+
+        .seller-text p .sale {
+            font-size: 18px;
+            color: #f21;
+        }
+
+        .seller-text p .unitprice {
+            text-decoration: line-through;
+            font-size: 12px;
+        }
+
+        .seller-title {
+            height: 80px;
+            box-sizing: border-box;
+            padding: 20px;
+
+        }
+
+        .seller-title h4 {
+            font-size: 36px;
+        }
+
+        .slick-dots {
+            margin: auto;
+            width: 90%;
+        }
+
+        .gotobestseller {
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            width: 174px;
+        }
+
+        .gotobestseller a {
+            margin: auto;
+            width: 100%;
+            font-size: 18px;
+            color: #222;
+            border: #222 1px solid;
+            padding: 3px 50px;
+            border-radius: 5px;
+        }
+
+        .gotobestseller a:hover {
+            background-color: #a2765899;
+            border: #fff 1px solid;
+        }
+
+
+        .link-block-pic img {
+            width: 100%;
+        }
+
+        .tabbox {
+            margin: 0 auto;
+            min-width: 320px;
+            max-width: 1000px;
+            text-align: center;
+            padding: 60px 0 60px;
+        }
+
+
+        .content>div {
+            display: none;
+            padding: 20px 25px 5px;
+        }
+
+        input {
+            display: none;
+        }
+
+        .tp {
+            display: inline-block;
+            padding: 5px 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .tp:hover {
+            color: #fbd284;
+            cursor: pointer;
+        }
+
+        input:checked+.tp {
+            background: #fbd284;
+            color: #fff;
+        }
+
+        #tab1:checked~.content #content1,
+        #tab2:checked~.content #content2,
+        #tab3:checked~.content #content3,
+        #tab4:checked~.content #content4,
+        #tab5:checked~.content #content5 {
+            display: block;
+            text-align: left;
+        }
+
+        #content1,
+        #content2,
+        #content3 {
+            margin: 0 0 20px;
+
+            height: 100%;
+            border: 1px solid #fbd284;
+            border-radius: 3px;
+        }
+
+        p {
+            line-height: 25px;
+            text-align: justify;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        /* .instagram-pic{
+            width: 380px;
+        }
+        .instagram-pic img {
+            width: 100%;
+            position: relative;
+
+        }
+        .fa-instagram{
+            position: absolute;
+            color: #fff;
+            font-size: 40px;
+            top: 40%;
+            left: 45%;
+        } */
+        .link-block {
+            background-color: #fff;
+            /* border: 1px solid #fbd284; */
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .link-title {
+            padding-top: 20px;
+            box-sizing: border-box;
+            font-weight: 700;
+        }
+
+        .link-title h3 {
+            height: 50px;
+            font-size: 36px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .link-block-pic {
+            position: relative;
+
+            box-sizing: border-box;
+            background-color: black;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 5px;
+            padding: 0px;
+        }
+
+        .link-block-pic:hover.link-block-pic img {
+            opacity: 1;
+            transform: scale(1.2);
+            transition-duration: 1.7s;
+        }
+
+        .link-block-pic a img {
+            opacity: .6;
+            margin: auto;
+            width: 100%;
+        }
+
+        .link-icon {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            right: 30%;
+            color: #fff;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .link-text {
+            position: absolute;
+            color: #fff;
+            top: 60%;
+            left: 30%;
+            right: 30%;
+            border: #fff 1px solid;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .section2 {
+            background-image: url(/picture/slow.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .Midfield-block {
+            width: 100%;
+            background-color: #f1f1ee;
+            margin: auto;
+        }
+
+        .Midfield {
+
+            overflow: visible;
+        }
+
+        /* .tabbox{
+            height: 100vh;
+
+        } */
+        .Midfield-but a {
+            font-size: 18px;
+            color: #222;
+            border: #222 1px solid;
+            padding: 3px 40px;
+            border-radius: 5px;
+            margin: auto 40px;
+            margin-left: 50px;
+            width: 150px;
+        }
+
+        .Midfield-but {
+            width: 100%;
+        }
+
+        .Midfield-but a:hover {
+
+            background-color: #a2765899;
+            border: #fff 1px solid;
+        }
+
+        .Midfield-pic img {
+            width: 100%;
+        }
+
+        .Midfield-title {
+            font-size: 28px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .Midfield-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 150px;
+        }
+
+        .Midfield-block {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .Midfield-text {
+            margin: 10px;
+        }
+    </style>
+    <style>
+        @media (min-width: 430px) {
+            .First-sight-text p {
+                font-size: 26px;
+            }
+
+            .slick-dots {
+                width: 95%;
+            }
+
+            .tp {
+                font-size: 22px;
+                letter-spacing: 3px;
+            }
+
+            input:checked+.tp {
+                background: #fbd284;
+                color: #fff;
+                font-size: 34px;
+
+            }
+
+            .link-title h3 {
+                text-align: left;
+                margin-left: 20px;
+            }
+
+            .link-block {
+                width: 768px;
+            }
+
+            .exhibition-pic,
+            .member-pic {
+                margin-right: 30px;
+            }
+
+            .Product-pic,
+            .place-pic {
+                margin-left: 30px;
+            }
+
+
+            .Midfield-block {
+                width: 768px;
+
+            }
+
+            .Midfield-title {
+                font-size: 40px;
+            }
+
+            .Midfield-content {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+
+            .Midfield-but {
+                margin: auto;
+            }
+            .Midfield-but a{
+                margin: auto 220px;
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 769px) {
+
+            .slick-dots {
+                width: 97%;
+            }
+
+            .link-block {
+                width: 1000px;
+            }
+
+            .Midfield-block {
+                width: 100%;
+                height: 400px;
+            }
+            .Midfield-text{
+                margin: 0;
+                margin-top: 50px;
+            }
+            .Midfield-but a{
+                margin: auto 100px;
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .First-sight-text p{
+                font-size: 36px;
+                padding: 20px;
+                letter-spacing: 3px;
+                line-height: 40px;
+            }
+            .Midfield-block{
+                width: 1000px;
+            }
+            .Midfield-content{
+                width: 450px;
+                margin: 30px 0px;
+            }
+            .Midfield-pic img{
+                width: 100%;
+            }
+            .Midfield{
+                background-color:#f1f1ee ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="First-sight">
+        <div class="First-sight-text">
+            <p>There is no friend so faithful as a good book.</p>
+        </div>
+    </div>
+
+    <div class="tabbox">
+        <input checked id="tab1" name="tabs" type="radio" />
+        <label class="tp" for="tab1">暢銷書籍</label>
+
+        <input id="tab2" name="tabs" type="radio" />
+        <label class="tp" for="tab2">最新上市</label>
+
+        <input id="tab3" name="tabs" type="radio" />
+        <label class="tp" for="tab3">每日特價</label>
+        <br />
+        <div class="content" style="background-color: white;">
+            <div id="content1">
+                <div class="bestseller seller container">
+                    <div class="row">
+                        <div class="bestseller-title seller-title col-sm-12">
+                            <h4><span>暢銷</span>書籍</h4>
+                        </div>
+                        <div class="bestseller-block seller-block slider col-sm-12">
+                            <a href="">
+                                <div class="bestseller-item seller-item">
+                                    <div class="bestseller-text seller-text">
+                                        <div class="bestseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=1">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="bestseller-item seller-item">
+                                    <div class="bestseller-text seller-text">
+                                        <div class="bestseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=2">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="bestseller-item seller-item">
+                                    <div class="bestseller-text seller-text">
+                                        <div class="bestseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=3">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="bestseller-item seller-item">
+                                    <div class="bestseller-text seller-text">
+                                        <div class="bestseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=4">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="bestseller-item seller-item">
+                                    <div class="bestseller-text seller-text">
+                                        <div class="bestseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=5">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gotobestseller">
+                            <a href="" class="m-auto">
+                                前往更多
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content2">
+                <div class="newseller seller container">
+                    <div class="row">
+                        <div class="newseller-title seller-title col-sm-12">
+                            <h4><span>最新</span>上市</h4>
+                        </div>
+                        <div class="newseller-block seller-block slider col-sm-12">
+                            <a href="">
+                                <div class="newseller-item seller-item">
+                                    <div class="newseller-text seller-text">
+                                        <div class="newseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=1">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="newseller-item seller-item">
+                                    <div class="newseller-text seller-text">
+                                        <div class="newseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=2">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="newseller-item seller-item">
+                                    <div class="newseller-text seller-text">
+                                        <div class="newseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=3">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="newseller-item seller-item">
+                                    <div class="newseller-text seller-text">
+                                        <div class="newseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=4">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="newseller-item seller-item">
+                                    <div class="newseller-text seller-text">
+                                        <div class="newseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=5">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gotobestseller">
+                            <a href="" class="m-auto">
+                                更多新品
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content3">
+                <div class="specialseller seller container">
+                    <div class="row">
+                        <div class="specialseller-title seller-title col-sm-12">
+                            <h4><span>每日</span>特價</h4>
+                        </div>
+                        <div class="specialseller-block seller-block slider col-sm-12">
+                            <a href="">
+                                <div class="specialseller-item seller-item">
+
+                                    <div class="specialseller-text seller-text">
+                                        <div class="specialseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=1">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="specialseller-item seller-item">
+                                    <div class="specialseller-text seller-text">
+                                        <div class="specialseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=2">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="specialseller-item seller-item">
+                                    <div class="specialseller-text seller-text">
+                                        <div class="specialseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=3">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="specialseller-item seller-item">
+                                    <div class="specialseller-text seller-text">
+                                        <div class="specialseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=4">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="specialseller-item seller-item">
+                                    <div class="specialseller-text seller-text">
+                                        <div class="specialseller-pic seller-pic">
+                                            <img src="https://picsum.photos/300/300/?random=5">
+                                        </div>
+                                        <p>
+                                            書名<br>
+                                            <span class="unitprice">$300</span><span class="sale"> $200</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gotobestseller">
+                            <a href="" class="m-auto">
+                                更多新品
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="section2">
+    </div> -->
+    <div class="Midfield">
+        <div class="Midfield-block row">
+            <div class="Midfield-pic col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
+                <img src="/picture/0vvet556xwdbjdmchaggwfya1g34yw9u_1400x800.jpg" alt="">
+            </div>
+            <div class="Midfield-text col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
+                <p class="Midfield-title"> 【不適者生存】</p>
+                <p class="Midfield-content">
+                    生命會自己找出路—《侏羅紀公園》（1993）
+                    「不適者生存？」一展的關鍵字，來自「適者生存」這個演化論的誤譯。在不同的情境下，人人都有可能是適者與不適者。面對社會文化的演化，倘若以藝術之名來審視，而非用天擇結果來歸納，又可以看見什麼？藝術史的風格演化？社會運動的推動與實踐？還是大眾文化的流行、過氣與復古？社會文化的演化與選擇，因適者而有所保存，但往往又由不適者所引發響應與關注。
+                </p>
+                <div class="Midfield-but">
+                    <a href="">
+                        更多展覽資訊
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="link-block">
+
+        <div class="link-title">
+            <h3>經營內容</h3>
+        </div>
+        <div class="row">
+            <div class="Product col-sm-12 col-md-6">
+                <div class="Product-pic link-block-pic">
+                    <a href="">
+                        <img src="/picture/Product.jpeg">
+                        <i class="fas fa-store link-icon"></i>
+                        <div class="Product-text link-text">
+                            商品專區
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="exhibition col-sm-12 col-md-6">
+                <div class="exhibition-pic link-block-pic">
+                    <a href="">
+                        <img src="/picture/Libreria-SCA-8287_Iwan-Baan_Web.jpg">
+                        <i class="fas fa-book link-icon"></i>
+                        <div class="exhibition-text link-text">
+                            展覽資訊
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="place col-sm-12 col-md-6">
+                <div class="place-pic link-block-pic">
+                    <a href="">
+                        <img src="/picture/Libreria-SCA-8716_credit-Iwan-Baan_Web.jpg">
+                        <i class="far fa-building link-icon"></i>
+                        <div class="place-text link-text">
+                            場地出租
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="member col-sm-12 col-md-6">
+                <div class="member-pic link-block-pic">
+                    <a href="">
+                        <img src="/picture/Libreria-SCA-8599-credit-Iwan-Baan-scaled.jpg">
+                        <i class="fas fa-male link-icon"></i>
+                        <div class="member-text link-text">
+                            會員專區
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+        integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/f7d0821b25.js" crossorigin="anonymous"></script>
+    <script>
+        //slick slider 效果設定
+        $(".slider").slick({
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 3,
+            speed: 1000,
+            autoplay: true,
+            arrows: false,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 1100,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '100px',
+                        slidesToShow: 2,
+                        speed: 1000,
+                        autoplay: true,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 2,
+                        speed: 1000,
+                        autoplay: true,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 1,
+                        speed: 1000,
+                        autoplay: true,
+                        dots: true
+                    }
+                }
+            ]
+        });
+    </script>
+    <script>
+
+        let mediaQueryList = window.matchMedia("(min-width:992px)");
+        function screenTest(x) {
+            if (x.matches) {
+                document.getElementById("navbarToggler").classList.remove("show");
+            }
+        }
+        mediaQueryList.addListener(screenTest);
+
+    </script>
+</body>
+
+</html>

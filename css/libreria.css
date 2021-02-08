@@ -1,0 +1,118 @@
+.head {
+
+    position: fixed;
+    display: block;
+    width: 100%;
+    background: #333;
+    z-index: 9;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+/* Logo */
+#brand {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-100px);
+}
+
+#brand img {
+    width: 200px;
+}
+
+/* Logo瞍Ｗ嵗��㯄�讠�� */
+.navbar-brand-hamburger img {
+    width: 100px;
+}
+
+#literial_brand img {
+    max-width: 250px;
+    padding: 30px 0px;
+}
+
+/* navbar銝餉�𤥁死�𠧧敶� */
+#nav-iconlist,
+#nav {
+    background-color: #2a2c27;
+}
+
+#search_from {
+    background-color: #2a2c27;
+}
+
+.nav-item i {
+    color: #7e8186;
+}
+
+.nav {
+    position: relative;
+    position: sticky;
+}
+
+/* navbar�折�冽�垍��矽�㟲 */
+#navbarToggler .nav-item {
+    padding: 20px;
+    text-align: center;
+}
+
+/* �𤣰���＊蝷箇隁甇� */
+.collapse.show+#brand,
+.collapsing+#brand,
+.collapse.show+#search-button,
+.collapsing+#search-button,
+.collapsing~#nav-iconbox,
+.collapse.show~#nav-iconbox {
+    display: none;
+}
+
+/* �𤣰����閧𧞄靽格迤����𧢲踎憿舐內靽格迤 */
+.collapsing {
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    display: -moz-popup;
+
+}
+
+.navbar-collapse.collapse.show {
+    height: 100vh;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    display: -moz-popup;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0e1b8;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.banner {
+    background-image: url(/picture/Mainpage\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner-text {
+    font-size: 20px;
+    color: #f0e1b8;
+    border: #f0e1b8 2px solid;
+    position: absolute;
+    top: 70%;
+    left: 35%;
+    right: 35%;
+}
+
+.section {
+    text-align: center;
+}
